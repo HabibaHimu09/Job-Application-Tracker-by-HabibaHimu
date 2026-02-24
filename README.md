@@ -46,3 +46,16 @@ the following is an example:
  if the button is pressed, this will first affect the chilc button, then the parent div, then the body and finally HTML.  
 
  
+
+**4. What is Event Delegation in JavaScript? Why is it useful?**
+
+Delegation is a complex process of Javascript. An event listener is set to patrent element, it can control the event of child element. 
+
+Benefit is no need to add additional event listener to every child elements. It enhances performance. 
+
+this is an example:
+document.getElementById("parent").addEventListener("click", function(e){
+   if(e.target.tagName === "BUTTON"){
+      console.log("Button clicked");
+   }
+});
