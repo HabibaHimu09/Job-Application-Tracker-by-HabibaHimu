@@ -1,0 +1,214 @@
+  /* --- 1. Fonts and Variables --- */
+    @font-face {
+      font-family: 'Geist';
+      src: url('fonts/geist.woff2') format('woff2'),
+           url('fonts/geist.woff') format('woff');
+      font-weight: 400 700;
+      font-style: normal;
+    }
+
+    :root {
+      --font-family: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --Black: #002c5c;
+      --Dark-Gray: #323b49;
+      --Gray: #64748b;
+      --Primary: #3b82f6;
+      --Green: #10b981;
+      --Red: #ef4444;
+      --White: #ffffff;
+      --Stroke: #f1f2f4;
+      --Bg-Color: #f8fafc;
+
+      
+      /* Badge Background Colors */
+      --Bg-NotApplied: #eef4ff;
+      --Bg-Interview: #ecfdf5; 
+      --Bg-Rejected: #fef2f2;  
+    }
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--Bg-Color);
+      color: var(--Dark-Gray);
+      line-height: 1.5;
+    }
+
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .page-title {
+      color: var(--Black);
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background-color: var(--White);
+      border: 1px solid var(--Stroke);
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .stat-label {
+       font-size: 14px; font-weight: 500; color: var(--Dark-Gray); 
+      }
+    .stat-value { font-size: 24px; font-weight: 700; }
+
+    .text-black { color: var(--Black); }
+    .text-green { color: var(--Green); }
+    .text-red { color: var(--Red); }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--Stroke);
+      margin-bottom: 24px;
+    }
+
+ 
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-title { font-size: 20px; font-weight: 700; color: var(--Black); }
+    .job-count { font-size: 16px; font-weight: 500; color: var(--Gray); }
+
+    .filters {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid var(--Stroke);
+      background-color: var(--White);
+      color: var(--Gray);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover { background-color: var(--Stroke); }
+    .filter-btn.active { background-color: var(--Primary); color: var(--White); border-color: var(--Primary); }
+
+    
+    .job-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .job-card {
+      background-color: var(--White);
+      border: 1px solid var(--Stroke);
+      border-radius: 8px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .job-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .job-title-group { display: flex; flex-direction: column; gap: 4px; }
+    .job-title { font-size: 18px; font-weight: 700; color: var(--Black); line-height: 1.2; }
+    .job-role { font-size: 16px; color: var(--Gray); }
+
+    .btn-delete {
+      display: flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--Stroke);
+      background-color: var(--White); color: var(--Gray); cursor: pointer;
+      flex-shrink: 0; transition: all 0.2s ease;
+    }
+
+    .btn-delete:hover { border-color: var(--Red); color: var(--Red); background-color: var(--Bg-Rejected); }
+
+
+    .job-meta { font-size: 14px; color: var(--Gray); display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .job-content { display: flex; flex-direction: column; gap: 10px; }
+
+   
+    .badge {
+      display: inline-flex; align-items: center; padding: 6px 12px;
+      border-radius: 4px; font-size: 12px; font-weight: 700; text-transform: uppercase;
+      align-self: flex-start;
+    }
+
+    .badge-not-applied { background-color: var(--Bg-NotApplied); color: var(--Black); }
+
+    .badge-interview { background-color: var(--Bg-Interview); color: var(--Green); }
+
+    .badge-rejected { background-color: var(--Bg-Rejected); color: var(--Red); }
+
+    .job-desc { font-size: 14px; color: var(--Dark-Gray); line-height: 1.6; }
+
+   
+    .job-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .action-btn {
+      padding: 8px 16px; border-radius: 4px; font-size: 12px; font-weight: 700;
+      text-transform: uppercase; background: transparent; cursor: pointer; transition: all 0.2s ease;
+    }
+
+    .action-btn.interview { border: 1px solid var(--Green); color: var(--Green); }
+
+    .action-btn.interview:hover { background-color: var(--Green); color: var(--White); 
+    }
+
+    .action-btn.reject { border: 1px solid var(--Red); color: var(--Red); }
+
+    .action-btn.reject:hover { background-color: var(--Red); color: var(--White); }
+
+
+    .empty-state-card {
+      background-color: var(--White); border: 1px solid var(--Stroke); border-radius: 8px;
+      min-height: 480px; display: none; flex-direction: column;
+      align-items: center; justify-content: center; padding: 40px 24px; text-align: center;
+    }
+    
+    .empty-state-icon { margin-bottom: 24px; }
+    .empty-state-title { font-size: 22px; font-weight: 700; color: var(--Black); margin-bottom: 8px; }
+    .empty-state-text { font-size: 16px; color: var(--Gray); }
+
+   
+    .d-none { display: none !important; }
+    .d-flex { display: flex !important; }
+
+    @media (max-width: 768px) {
+      .container { padding: 30px 16px; }
+      .page-title { font-size: 28px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .empty-state-card { min-height: 350px; }
+    }
