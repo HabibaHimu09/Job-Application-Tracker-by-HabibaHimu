@@ -26,3 +26,23 @@ newElement.innerText = "Example Text";
 
 This is the way to add to the DOM of the HTML
 document.body.appendChild(newElement);
+
+**3. What is Event Bubbling? And how does it work?**
+Event bubbling is a process how the event happened with child element affect the parent elements. 
+
+the following is an example:
+```
+<HTML>
+  ......
+  
+  <body>
+    <div id="parent">
+       <button id="child">Click</button>
+    </div>
+  </body>
+
+ </HTML>
+```
+ if the button is pressed, this will first affect the chilc button, then the parent div, then the body and finally HTML.  
+
+ 
