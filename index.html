@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Tracker</title>
+
+
+
+</head>
+
+<body>
+
+<div class="container">
+  <h1 class="page-title">Job Application Tracker</h1>
+
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-label">Total</span>
+      <span class="stat-value text-black" id="stat-total">0</span>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-label">Interview</span>
+      <span class="stat-value text-green" id="stat-interview">0</span>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-label">Rejected</span>
+      <span class="stat-value text-red" id="stat-rejected">0</span>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+ 
+  <div class="section-header">
+    <h2 class="section-title">Available Jobs</h2>
+    <span class="job-count" id="job-count-text">0 jobs</span>
+  </div>
+
+  
+  <div class="filters" id="filter-container">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="interview">Interview</button>
+    <button class="filter-btn" data-filter="rejected">Rejected</button>
+  </div>
+
+  
+  <div class="job-list" id="job-list">
+  </div>
+
+  <div class="empty-state-card" id="empty-state">
+    <div class="empty-state-icon">
+      <img src="./image/empty.svg" />
+    </div>
+    <h3 class="empty-state-title">No jobs available</h3>
+    <p class="empty-state-text">Check back soon for new job opportunities</p>
+  </div>
+
+</div>
+
+
+
+
+</body>
+</html>
